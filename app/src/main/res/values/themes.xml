@@ -1,1 +1,11 @@
-
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Friday" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#7c3aed</item>
+        <item name="colorPrimaryVariant">#5b21b6</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <item name="android:windowBackground">#07050f</item>
+        <item name="android:statusBarColor">#07050f</item>
+        <item name="android:navigationBarColor">#0f0a1e</item>
+    </style>
+</resources>
