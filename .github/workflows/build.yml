@@ -31,13 +31,6 @@ jobs:
       - name: Grant gradlew permission
         run: chmod +x gradlew
 
-      - name: Create launcher icons
-        run: |
-          for dir in mipmap-mdpi mipmap-hdpi mipmap-xhdpi mipmap-xxhdpi mipmap-xxxhdpi; do
-            mkdir -p app/src/main/res/$dir
-            cp app/src/main/res/drawable/ic_mic.xml app/src/main/res/$dir/ic_launcher.xml 2>/dev/null || true
-          done
-
       - name: Create placeholder PNG icons
         run: |
           sudo apt-get install -y imagemagick
