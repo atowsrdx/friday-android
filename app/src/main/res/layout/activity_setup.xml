@@ -1,1 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#07050f">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F.R.I.D.A.Y"
+            android:textColor="#a78bfa"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.2"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Setup your AI Assistant"
+            android:textColor="#7c6faa"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"/>
+
+        <!-- Gemini Key -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GEMINI API KEY"
+            android:textColor="#7c6faa"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/geminiKeyInput"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="AIza…"
+            android:hintTextColor="#4a4060"
+            android:textColor="#e2d9f3"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="textPassword"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YOUR NAME"
+            android:textColor="#7c6faa"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/userNameInput"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="Boss"
+            android:hintTextColor="#4a4060"
+            android:textColor="#e2d9f3"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Wake word -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WAKE WORD (say this to activate)"
+            android:textColor="#7c6faa"
+            android:textSize="11sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/wakeWordInput"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="friday"
+            android:hintTextColor="#4a4060"
+            android:textColor="#e2d9f3"
+            android:background="@drawable/input_bg"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:inputType="text"
+            android:layout_marginBottom="32dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get free Gemini API key at: aistudio.google.com"
+            android:textColor="#4a4060"
+            android:textSize="12sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="ACTIVATE FRIDAY"
+            android:textColor="#ffffff"
+            android:backgroundTint="#7c3aed"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"/>
+    </LinearLayout>
+</ScrollView>
