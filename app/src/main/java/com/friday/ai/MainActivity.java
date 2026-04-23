@@ -99,33 +99,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initTTS() {
-        tts = new TextToSpeech(this, status -> {
-            if (status == TextToSpeech.SUCCESS) {
-                tts.setLanguage(Locale.US);
-                tts.setPitch(1.1f);
-                tts.setSpeechRate(0.95f);
-                // Try to use female voice
-                for (java.util.Set<android.speech.tts.Voice> voices = tts.getVoices() != null
-                        ? tts.getVoices() : new java.util.HashSet<>();
-                     false; ) {}
-                tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
-                    @Override public void onStart(String id) {
-                        isSpeaking = true;
-                        runOnUiThread(() -> setStatus("Speaking…"));
-                    }
-                    @Override public void onDone(String id) {
-                        isSpeaking = false;
-                        runOnUiThread(() -> setStatus("Ready — tap mic to speak"));
-                    }
-                    @Override public void onError(String id) { isSpeaking = false; }
-                });
-                // Greet on startup
-                String name = prefs.getString("user_name", "Boss");
-                speak("Hey " + name + "! Friday online. How can I help you?");
-            }
-        });
+    tts = new TextToSpeech(this, status -> {
+        if (status == TextToSpeech.SUCCESS) {
+            tts.setLanguage(Locale.US);
+            tts.setPitch(1.1f);
+            tts.setSpeechRate(0.95f);
+            tts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+                @Override public void onStart(String id) {
+                    isSpeaking = true;
+                    runOnUiThread(() -> setStatus("Speaking…"));
+                }
+                @Override public void onDone(String id) {
+                    isSpeaking = false;
+                    runOnUiThread(() -> setStatus("Ready — tap mic to speak"));
+                }
+                @Override public void onError(String id) { isSpeaking = false; }
+            });
+            String name = prefs.getString("user_name", "Boss");
+            speak("Hey " + name + "! Friday online. How can I help you?");
+        }
+    });
     }
-
     private void initSpeechRecognizer() {
         if (!SpeechRecognizer.isRecognitionAvailable(this)) {
             Toast.makeText(this, "Speech recognition not available on this device", Toast.LENGTH_LONG).show();
